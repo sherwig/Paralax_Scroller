@@ -1,7 +1,9 @@
+@import "normalize.scss";
 @import "variables.scss";
 @import "functions.scss";
 @import "mixins.scss";
+@import "base-before.scss";
 @import "base.scss";
 @import "base-after.scss";
-@import "base-before.scss";
-@import "layout.scss";
+@import "parallax.scss";
+// @import "layout.scss";
