@@ -1,4 +1,6 @@
 $img1Path: "../dist/img/BreckSnowStake.jpg";
+$img3Path: "../dist/img/chicky-chick.jpg";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .parallax_img {
   height: 500px;
@@ -8,12 +10,47 @@ $img1Path: "../dist/img/BreckSnowStake.jpg";
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% auto;
+  opacity: 0.6;
 }
 
 .parallax_img2 {
+  height: 500px;
   background-image: url("https://theknow.denverpost.com/wp-content/uploads/2020/02/Screen-Shot-2020-02-12-at-12.14.36-PM.png");
 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  opacity: 0.6;
 }
+
+#volcano {
+  height: 500px;
+  background-image: url("../dist/img/chicky-chick.jpg");
+  // background-image: url("https://s7305.pcdn.co/wp-content/uploads/2013/11/BreckSnowStake.jpg");
+  // background-image:url(#{$img1Path}/jpg) background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 15% auto;
+  margin-top: -250px;
+  margin-right: -150px;
+  opacity: 0.75;
+
+}
+
+#leaf {
+  height: 500px;
+  background-image: url("../dist/img/aspen.jpg");
+  // background-image: url("https://s7305.pcdn.co/wp-content/uploads/2013/11/BreckSnowStake.jpg");
+  // background-image:url(#{$img1Path}/jpg) background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 15% auto;
+  margin-top: -300px;
+  margin-left: -200px;
+  opacity: 0.75;
+
+}
+
 @media screen and (max-width: 768px) {
   .parallax_img {
     background-attachment: inherit;
@@ -59,6 +96,11 @@ $parallax-ios: true !default;
   z-index: $distance * 1000;
 }
 
+@mixin parallaxOpacity($distance : 0, $perspective : $parallax-perspective) {
+  transform: translateZ($distance * $perspective * 1px) scale(abs($distance - 1));
+  z-index: $distance * 1000;
+}
+
 // End of magic parallax mixins
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:100);
@@ -68,28 +110,29 @@ $primary: #1586D1;
 
 .parallax-container {
   :nth-child(1) {
+    // @include parallax(0.1);
     @include parallax(0.1);
     top: 50px;
-    left: -100px;
+    left: 50px;
   }
 
   :nth-child(2) {
     @include parallax(0.2);
-    top: 250px;
-    left: 50px;
+    top: 275px;
+    left: 75px;
     // left: -50px;
   }
 
   :nth-child(3) {
     @include parallax(0.2);
-    top: 400px;
+    top: 500px;
     left: 100px;
   }
 
   :nth-child(4) {
-    @include parallax(0.1);
-    top: 500px;
-    left: 500px;
+    @include parallax(0.2);
+    top: 600px;
+    left: 100px;
   }
 
   :nth-child(5) {
@@ -136,6 +179,36 @@ $primary: #1586D1;
   }
 }
 
+.parallax-container2 {
+  :nth-child(1) {
+    // @include parallax(0.1);
+    @include parallax(0.1);
+    // top: 50px;
+    // left: 50px;
+  }
+
+  :nth-child(2) {
+    @include parallax(0.2);
+    top: 275px;
+    left: 75px;
+    // left: -50px;
+  }
+
+  :nth-child(3) {
+    @include parallax(0.2);
+    top: 500px;
+    left: 100px;
+  }
+
+  padding: 10%;
+  max-width: 60em;
+  margin: auto;
+
+  > * {
+    position: absolute;
+  }
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-weight: 100;
@@ -145,7 +218,8 @@ body {
 
 h1,
 h2 {
-  font-weight: 100;
+  font-family: 'Anton', sans-serif;
+  // font-weight: 200;
   margin-top: 1%;
 }
 
@@ -166,7 +240,13 @@ h2 {
   padding-left: 4%;
 
 }
+//
+// .chick {
+//   color: white;
+// }
 
 p {
   @include parallax(0.1);
+  margin-left: 30px;
+  font-size: 1.2em;
 }
