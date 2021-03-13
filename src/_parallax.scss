@@ -21,6 +21,7 @@ $img3Path: "../dist/img/chicky-chick.jpg";
   background-repeat: no-repeat;
   background-size: 100% auto;
   opacity: 0.6;
+  margin-bottom: 3%;
 }
 
 #volcano {
@@ -182,25 +183,25 @@ $primary: #1586D1;
 .parallax-container2 {
   :nth-child(1) {
     // @include parallax(0.1);
-    @include parallax(0.1);
-    // top: 50px;
-    // left: 50px;
+    @include parallax(0.2);
+    top: 50px;
+    left: -150px;
   }
 
   :nth-child(2) {
     @include parallax(0.2);
-    top: 275px;
-    left: 75px;
+    top: 175px;
+    // left: 100px;
     // left: -50px;
   }
 
   :nth-child(3) {
     @include parallax(0.2);
-    top: 500px;
+    top: 300px;
     left: 100px;
   }
 
-  padding: 10%;
+  padding: 2%;
   max-width: 60em;
   margin: auto;
 
